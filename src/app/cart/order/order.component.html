@@ -1,0 +1,84 @@
+
+<form [formGroup]="OrderForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="container col-sm-6 mt-2 mb-2">
+      <div class="justify-content-between d-flex">
+        <mat-card-title>Place Your Order</mat-card-title>
+      </div>
+      <hr />
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+        
+          <input
+          matInput
+          placeholder="Name"
+          formControlName="Name"
+        />
+          <mat-error
+            *ngIf="OrderForm.controls['Name'].hasError('required')"
+          >
+          Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Mob. Number</mat-label>
+  
+          <input
+            matInput
+            placeholder="Mob. Number"
+            formControlName="MobNumber"
+          />
+          <mat-error
+            *ngIf="OrderForm.controls['MobNumber'].hasError('required')"
+          >
+          Mob. Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+  
+        
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+    
+            <input
+              matInput
+              placeholder="Email"
+              formControlName="Email"
+            />
+            <mat-error
+              *ngIf="OrderForm.controls['Email'].hasError('required')"
+            >
+            Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+    
+  <br>
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <textarea
+            matInput
+            placeholder="Address"
+            formControlName="Address"
+          ></textarea>
+          <mat-error
+            *ngIf="
+              OrderForm.controls['Address'].hasError('required')
+            "
+          >
+            Address is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <br />
+        <div>
+            <mat-label><b>Payment Mode:</b> Cash On Delivery</mat-label>
+        </div>
+        <br />
+        <button mat-raised-button color="primary" type="submit">submit</button>
+      </mat-card-actions>
+    </mat-card>
+    <br />
+    <br />
+  </form>
+  

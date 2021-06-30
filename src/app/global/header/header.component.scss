@@ -1,0 +1,27 @@
+mat-toolbar, mat-toolbar-row{
+    background: linear-gradient(to right, #f43b48 0%, #453a94 100%);
+    color: #fff;
+}
+.mat-menu-content{
+    background-color: white;
+}
+.menu {
+    color: black;
+    background-color: white;
+    
+}
+.menu:hover{
+    background-color: gray;
+}
+
+a{
+    color:white;
+    text-decoration-line: unset;
+}
+
+button{
+    background-color: transparent;
+    border: 0;
+    font-size: 1em;
+    padding: 1em;
+}

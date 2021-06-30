@@ -1,0 +1,61 @@
+<mat-card class="col-sm-11 col-md-11 container uk-display-inline-block">
+    <div class="row">
+      <div class="float-left ml-2 h1">
+        <mat-card-title>My Cart : Total items ({{count}})</mat-card-title>
+        
+        <mat-card-actions>
+           
+            <mat-card-content style="float: right;" >
+                <b>Total Price:</b>
+                {{total_price | currency:"INR":"symbol"}}
+            <button mat-button
+            style="float: right; margin-left: 1em;" color = "primary"
+            (click) = 'order()'>Place Order</button>
+
+        </mat-card-content>
+
+          </mat-card-actions>
+      </div>
+    </div>
+  </mat-card>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <mat-card
+        *ngFor = 'let item of arr_item' 
+        >
+          <mat-card-title class="justify-content-between"
+          >{{item.Name}}
+          </mat-card-title>
+          <mat-card-content>
+            <b>Author:</b>
+                {{item.Author}}
+          </mat-card-content>
+          <mat-card-content>
+            <b>Category:</b>
+            {{item.Category}}
+          </mat-card-content>
+          <mat-card-content>
+            <b>Description:</b>
+            {{item.Description}}
+          </mat-card-content>
+          <mat-card-content>
+            <b>Price:</b>
+            {{item.Price | currency:"INR":"symbol"}}
+          </mat-card-content>
+          <mat-card-content>
+          <img src="{{item.Image}}" 
+          width="100" height="100"
+          
+          >
+             
+          </mat-card-content>
+        </mat-card>
+
+        <hr>
+        
+      </div>
+     
+    </div>
+  </div>
+ 
