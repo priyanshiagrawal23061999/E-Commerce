@@ -25,16 +25,17 @@ export class CartService {
     stored.push(prod);
     localStorage.setItem('cart', JSON.stringify(stored));
 
-    console.log(JSON.parse(localStorage.getItem('cart') || '{}'));
   }
 
   getCartItems() {
     var result = JSON.parse(localStorage.getItem('cart') || '{}');
-    
+
+    if(localStorage.getItem('cart')){
     var items = result.map((user: any) => user);
     
     return items;
-    
+    }
+    else return 0
   }
 
   showPrice(arr_items: any){
